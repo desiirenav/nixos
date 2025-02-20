@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ lib, config, pkgs, inputs, pkgs-unstable, ... }:
 
 {
  
@@ -45,20 +45,44 @@
   };
 
  
+  # Bluetooth
+  hardware.bluetooth.enable = true;
+
+  # Fish 
+  programs.fish.enable = true;
+
+  # Hyprland
+  programs.hyprland.enable = true;
+
+  # NTFS
+  boot.supportedFilesystems = [ "ntfs" ];
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-
+  
+  # Flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
-     ranger
-     git
-  ];
+  environment.systemPackages = 
+    (with pkgs; [
+      fastfetch
+      calibre
+      adwaita-icon-theme
+      nitch
+      gvfs
+      wl-clipboard
+      upower
+      power-profiles-daemon
+      ranger
+      inputs.zen-browser.packages."${system}".specific
+     ])
 
+     ++
+
+     (with pkgs-unstable; [
+       nerd-fonts.jetbrains-mono
+     ]);
+   
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
