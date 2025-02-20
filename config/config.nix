@@ -44,6 +44,9 @@
     variant = "";
   };
 
+  # Power
+  services.upower.enable = true;
+  services.power-profiles-daemon.enable = true;  
  
   # Bluetooth
   hardware.bluetooth.enable = true;
