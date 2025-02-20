@@ -4,7 +4,11 @@
 { config, lib, pkgs, modulesPath, ... }:
 
 {
-  imports = [ (modulesPath + "/installer/scan/not-detected.nix") ./config.nix];
+  imports = [ 
+    (modulesPath + "/installer/scan/not-detected.nix") 
+    ./config.nix 
+    ./narayan.nix
+  ];
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;

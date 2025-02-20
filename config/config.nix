@@ -44,19 +44,7 @@
     variant = "";
   };
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.narayan = {
-    isNormalUser = true;
-    description = "Narayan";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [];
-    openssh = {
-      authorizedKeys.keys = [
-       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBhgcC+53QIoD9wmc0ziGtCfyivh7lDb65E5ADCP5Bcv narayan@nav"
-       ];
-     };
-   };
-
+ 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
