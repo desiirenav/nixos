@@ -1,5 +1,5 @@
 {pkgs, config, lib, inputs, ... }: let
-  
+  wallpaper = ./wal.png;  
                                                                           
 in { 
   programs.kitty = lib.mkForce {
@@ -14,6 +14,14 @@ in {
     rofi-wayland
     hyprpaper
   ];
+
+  services.hyprpaper = {
+    enable = true;
+    settings = {
+      preload = ["${wallpaper}"];
+      wallpaper = [",${wallpaper}"];
+    };
+  };
  
   wayland.windowManager.hyprland = {
      enable = true;

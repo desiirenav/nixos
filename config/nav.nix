@@ -8,6 +8,7 @@
     (modulesPath + "/installer/scan/not-detected.nix") 
     ./config.nix 
     ./narayan.nix
+    ./modules/stylix.nix
   ];
 
   # Use the systemd-boot EFI boot loader.

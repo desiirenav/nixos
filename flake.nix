@@ -9,9 +9,10 @@
       hyprland.url = "github:hyprwm/Hyprland";
       hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
       zen-browser.url = "github:MarceColl/zen-browser-flake";
+      stylix.url = "github:danth/stylix/release-24.11";
     };
 
-    outputs = { self, nixpkgs, home-manager, nixpkgs-unstable, hyprland, hyprpanel, ... }@inputs:
+    outputs = { self, nixpkgs, home-manager, nixpkgs-unstable, hyprland, hyprpanel, stylix, ... }@inputs:
       let
         system = "x86_64-linux";
         lib = nixpkgs.lib;
@@ -22,14 +23,13 @@
           ];
         };
 
-        specialArgs = inputs // { inherit system; };
+        specialArgs = inputs // { inherit system inputs pkgs pkgs-unstable; };
         pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
-        specialArgs = inputs // {
-          inherit system inputs pkgs pkgs-unstable;
-        };
+        
 
         shared-modules = [
           home-manager.nixosModules.home-manager
+          stylix.nixosModules.stylix
           {
             home-manager = {
               useUserPackages = true;

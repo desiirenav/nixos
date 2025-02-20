@@ -15,6 +15,7 @@
       imports = [ 
        ./home.nix
        ./modules/hyprland.nix
+       ./modules/stylix.nix
       ];
       programs.git = {
         enable = true;
