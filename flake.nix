@@ -10,7 +10,7 @@ outputs = { self, nixpkgs }@inputs:
     nixosConfigurations = {
       nav = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        modules = [ ./configuration.nix];
+        modules = [ ./config/nav.nix];
       };
     };
   };
