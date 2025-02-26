@@ -44,6 +44,10 @@
             inherit system specialArgs;
             modules = shared-modules ++ [ ./config/nav.nix ];
           };
+          nixos = nixpkgs.lib.nixosSystem {
+            inherit system specialArgs;
+            modules = shared-modules ++ [ ./config/nixos.nix ];
+          };
         };
       };
 }
