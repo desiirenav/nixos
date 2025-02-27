@@ -12,5 +12,5 @@
     '';
   };
   
-  home.packages = with pkgs; [ hyprpanel calibre ];
+  home.packages = with pkgs; [ hyprpanel calibre qbittorrent ];
 }
