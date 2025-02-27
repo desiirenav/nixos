@@ -63,7 +63,6 @@
     (with pkgs; [
       fastfetch
       calibre
-      adwaita-icon-theme
       nitch
       gvfs
       wl-clipboard
