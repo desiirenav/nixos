@@ -18,6 +18,7 @@
         lib = nixpkgs.lib;
         pkgs = import nixpkgs {
           inherit system;
+          config.allowUnfree = true;
           overlays = [
             inputs.hyprpanel.overlay
           ];
