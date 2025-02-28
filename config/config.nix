@@ -74,7 +74,7 @@
       heroic
       gamemode
       mangohud
-      lf
+      superfile
      ])
 
      ++
