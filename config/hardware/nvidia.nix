@@ -1,6 +1,5 @@
-{ config, lib, pkgs, ... }:
+{ lib, config, pkgs, inputs, pkgs-unstable, ... }:
 {
-
   # OpenGL
   hardware.graphics = {
     enable = true;
