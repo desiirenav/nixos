@@ -71,6 +71,10 @@
       ranger
       inputs.zen-browser.packages."${system}".default
       vim
+      heroic
+      gamemode
+      mangohud
+      lf
      ])
 
      ++
