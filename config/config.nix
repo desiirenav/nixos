@@ -74,6 +74,7 @@
       heroic
       gamemode
       mangohud
+      inputs.superfile.packages.${system}.default
      ])
 
      ++
