@@ -16,6 +16,7 @@
        ./home.nix
        ./modules/hyprland.nix
        ./modules/stylix.nix
+       ./modules/yazi.nix
       ];
       programs.git = {
         enable = true;

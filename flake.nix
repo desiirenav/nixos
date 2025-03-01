@@ -10,7 +10,6 @@
       hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
       zen-browser.url = "github:0xc000022070/zen-browser-flake";
       stylix.url = "github:danth/stylix/release-24.11";
-      superfile.url = "github:yorukot/superfile";
     };
 
     outputs = { self, nixpkgs, home-manager, nixpkgs-unstable, hyprland, hyprpanel, stylix, ... }@inputs:
