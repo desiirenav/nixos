@@ -63,12 +63,9 @@
     (with pkgs; [
       fastfetch
       calibre
-      nitch
-      gvfs
       wl-clipboard
       upower
       power-profiles-daemon
-      ranger
       inputs.zen-browser.packages."${system}".default
       vim
       heroic
