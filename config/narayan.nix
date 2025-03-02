@@ -18,6 +18,7 @@
        ./modules/hyprland.nix
        ./modules/stylix.nix
        ./modules/yazi.nix
+       ./modules/rofi.nix
       ];
       programs.git = {
         enable = true;
