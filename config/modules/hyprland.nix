@@ -12,7 +12,6 @@ in {
 
   home.packages = with pkgs; [
     hyprpaper
-    rofi-wayland
   ];
 
   services.hyprpaper = {
@@ -99,7 +98,7 @@ in {
 	   "$mod, RETURN, exec, kitty"
 	   "$mod, Q, killactive"
 	   "$mod, M, exit"
-	   "$mod, X, exec, rofi -show drun"
+	   "$mod, X, exec, fuzzel"
 	   "$mod, E, exec, ranger"
 	   "$mod, V, togglefloating"
 	   "$mod, P, pseudo"
