@@ -6,7 +6,8 @@
     ./config.nix 
     ./narayan.nix
     ./modules/stylix.nix
-    ./hardware/nvidia.nix 
+    ./hardware/nvidia.nix
+    ./modules/ios.nix 
   ];
 
   # Use the systemd-boot EFI boot loader
