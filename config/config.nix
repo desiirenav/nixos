@@ -72,6 +72,7 @@
       gamemode
       mangohud
       unrar
+      unzip
       
       (discord.override {
         withVencord = true;

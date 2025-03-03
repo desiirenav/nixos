@@ -9,6 +9,7 @@
     ./config.nix 
     ./narayan.nix
     ./modules/stylix.nix
+    ./modules/ios.nix
   ];
 
   # Use the systemd-boot EFI boot loader.
