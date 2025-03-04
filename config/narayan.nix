@@ -18,7 +18,6 @@
        ./modules/hyprland.nix
        ./modules/stylix.nix
        ./modules/yazi.nix
-       ./modules/fuzzel.nix
        ./modules/rofi.nix
       ];
       programs.git = {

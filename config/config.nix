@@ -1,22 +1,14 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
 { lib, config, pkgs, inputs, pkgs-unstable, ... }:
 
 {
- 
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
-  # Enable networking
+  # Networking
   networking.networkmanager.enable = true;
 
-  # Set your time zone.
+  # Time zone.
   time.timeZone = "America/Toronto";
 
-  # Select internationalisation properties.
+  # Internationalisation
   i18n.defaultLocale = "en_US.UTF-8";
 
   i18n.extraLocaleSettings = {
@@ -31,7 +23,7 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-  # Configure keymap in X11
+  # Keymap
   services.xserver.xkb = {
     layout = "us";
     variant = "";
@@ -56,7 +48,7 @@
   # Flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  # Allow unfree packages
+  # Unfree packages
   nixpkgs.config.allowUnfree = true;  
 
   environment.systemPackages = 
@@ -72,8 +64,7 @@
       mangohud
       unrar
       unzip
-      miru
-      
+      miru 
       (discord.override {
         withVencord = true;
        })
@@ -85,7 +76,7 @@
        nerd-fonts.jetbrains-mono
      ]);
    
-  # Enable OpenSSH
+  # OpenSSH
   services.openssh.enable = true;
 
   # System Version

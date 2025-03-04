@@ -98,7 +98,7 @@ in {
 	   "$mod, RETURN, exec, kitty"
 	   "$mod, Q, killactive"
 	   "$mod, M, exit"
-	   "$mod, X, exec, fuzzel"
+	   "$mod, X, exec, rofi -show drun"
 	   "$mod, E, exec, ranger"
 	   "$mod, V, togglefloating"
 	   "$mod, P, pseudo"

@@ -3,7 +3,6 @@
 {
   programs.rofi = {
     enable = true;
-    theme = "default";
     terminal = "${pkgs.kitty}/bin/kitty";
     
     extraConfig = {
