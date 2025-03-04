@@ -10,12 +10,12 @@
     };
     fonts = {
       serif = {
-        package = pkgs.noto-fonts;
-        name = "Noto Serif";
+        package = pkgs.inter;
+        name = "Inter";
       };
       sansSerif = {
-        package = pkgs.noto-fonts;
-        name = "Noto Sans";
+        package = pkgs.inter;
+        name = "Inter";
       };
       monospace = {
         package = pkgs.nerdfonts.override {fonts = ["JetBrainsMono"];};

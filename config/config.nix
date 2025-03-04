@@ -62,7 +62,6 @@
   environment.systemPackages = 
     (with pkgs; [
       fastfetch
-      calibre
       wl-clipboard
       upower
       power-profiles-daemon
@@ -73,6 +72,7 @@
       mangohud
       unrar
       unzip
+      miru
       
       (discord.override {
         withVencord = true;
