@@ -4,15 +4,14 @@
   programs.rofi = {
     enable = true;
     terminal = "${pkgs.kitty}/bin/kitty";
-    
+    package = pkgs.rofi-wayland;
     extraConfig = {
       modi = "drun,run,window";
+      font = "JetBrainsMono Nerd Font Mono 12";
       show-icons = true;
-      display-drun = "Applications";
-      display-run = "Run Command";
-      display-window = "Windows";
-      width = 60;
-      lines = 10;
+      drun-display-format = "{icon} {name}";
+      display-drun = "Apps";
+      display-run = "Run";
     };
   };
 }
