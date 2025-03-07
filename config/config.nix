@@ -64,7 +64,7 @@
       mangohud
       unrar
       unzip
-      miru 
+      ani-cli 
       (discord.override {
         withVencord = true;
        })
