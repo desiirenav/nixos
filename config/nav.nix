@@ -12,6 +12,10 @@
     ./modules/ios.nix
   ];
 
+  environment.systemPackages = with pkgs; [
+    calibre
+  ];
+
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
