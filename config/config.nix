@@ -64,7 +64,9 @@
       mangohud
       unrar
       unzip
-      ani-cli 
+      ani-cli
+      qbittorrent
+      adwaita-icon-theme 
       (discord.override {
         withVencord = true;
        })

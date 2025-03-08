@@ -12,5 +12,5 @@
     '';
   };
   
-  home.packages = with pkgs; [ hyprpanel calibre qbittorrent adwaita-icon-theme ];
+  home.packages = with pkgs; [ hyprpanel ];
 }
