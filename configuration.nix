@@ -5,11 +5,7 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
-
+ 
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -41,19 +37,6 @@
   services.xserver.xkb = {
     layout = "us";
     variant = "";
-  };
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.narayan = {
-    isNormalUser = true;
-    description = "Narayan";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [];
-      openssh = {
-      authorizedKeys.keys = [
-        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDe1pOhgB5RAiM4gHwLtpZaBqecMaplqKFJQ8iSZtxgY narayan@nixos"
-      ];
-    };
   };
 
   # Allow unfree packages
