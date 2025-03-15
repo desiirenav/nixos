@@ -2,7 +2,7 @@
 {
   stylix = {
     enable = true;
-    image = ./wal.jpg;
+    image = ./w.png;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine-dawn.yaml";
     cursor = {
       package = pkgs.capitaine-cursors-themed;
