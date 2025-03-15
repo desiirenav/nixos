@@ -3,15 +3,34 @@
 
     inputs = {
       nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
+      nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
       home-manager.url = "github:nix-community/home-manager/release-24.11";
+      home-manager.inputs.nixpkgs.follows = "nixpkgs";
+      hyprland.url = "github:hyprwm/Hyprland";
+      hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
+      zen-browser.url = "github:0xc000022070/zen-browser-flake";
+      stylix.url = "github:danth/stylix/release-24.11";
     };
 
-    outputs = { self, nixpkgs, home-manager }@inputs:
+    outputs = { self, nixpkgs, home-manager, nixpkgs-unstable, hyprland, hyprpanel, stylix, ... }@inputs:
       let
         system = "x86_64-linux";
-        specialArgs = inputs // { inherit system; };
+        lib = nixpkgs.lib;
+        pkgs = import nixpkgs {
+          inherit system;
+          config.allowUnfree = true;
+          overlays = [
+            inputs.hyprpanel.overlay
+          ];
+        };
+
+        specialArgs = inputs // { inherit system inputs pkgs pkgs-unstable; };
+        pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
+        
+
         shared-modules = [
           home-manager.nixosModules.home-manager
+          stylix.nixosModules.stylix
           {
             home-manager = {
               useUserPackages = true;
@@ -23,10 +42,10 @@
       {
         nixosConfigurations = {
           nixos = nixpkgs.lib.nixosSystem {
-            specialArgs = specialArgs;
-            system = system;
-            modules = shared-modules ++ [ ./nixos.nix ];
+            inherit system specialArgs;
+            modules = shared-modules ++ [ ./config/nixos.nix ];
           };
         };
       };
 }
+
