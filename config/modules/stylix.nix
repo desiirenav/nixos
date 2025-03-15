@@ -2,8 +2,8 @@
 {
   stylix = {
     enable = true;
-    image = ./wal.jpg;
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
+    image = ./w.jpg;
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine.yaml";
     cursor = {
       package = pkgs.capitaine-cursors-themed;
       name = "Capitaine Cursors (Gruvbox)";

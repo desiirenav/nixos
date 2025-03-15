@@ -62,6 +62,7 @@
       unrar
       unzip
       ani-cli
+      librewolf
       adwaita-icon-theme 
       (discord.override {
         withVencord = true;
