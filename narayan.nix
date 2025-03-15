@@ -12,4 +12,16 @@
       ];
     };
   };
+
+  home-manager = {
+    users.narayan = {
+      imports = [ ./home.nix ];
+      programs.git = {
+        enable = true;
+        userName = "desiirenav";
+        userEmail = "desiirenav@hotmail.com";
+      };
+      home.stateVersion = "24.11";
+    };
+  };
 }
