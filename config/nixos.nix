@@ -5,7 +5,7 @@
 
 {
   imports =
-    [ (modulesPath + "/installer/scan/not-detected.nix") ./configuration.nix ./narayan.nix ./modules/hyprland.nix
+    [ (modulesPath + "/installer/scan/not-detected.nix") ./config.nix ./narayan.nix ./modules/hyprland.nix
     ];
 
   # Bootloader.

@@ -60,9 +60,6 @@
       power-profiles-daemon
       inputs.zen-browser.packages."${system}".default
       vim
-      heroic
-      gamemode
-      mangohud
       unrar
       unzip
       ani-cli
