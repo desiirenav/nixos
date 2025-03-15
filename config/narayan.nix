@@ -1,8 +1,9 @@
-{ pkgs, ...}:
+{ pkgs,lib,inputs,pkgs-unstable, ...}:
 
 {
   users.users.narayan = {
     isNormalUser = true;
+    shell = pkgs-unstable.fish;
     description = "Narayan";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [];
