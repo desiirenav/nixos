@@ -1,5 +1,5 @@
 {pkgs, config, lib, inputs, ... }: let
-  wallpaper = ./w.png;  
+  wallpaper = ./wal.jpg;  
                                                                           
 in { 
   programs.kitty = lib.mkForce {
