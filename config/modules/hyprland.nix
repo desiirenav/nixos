@@ -1,4 +1,5 @@
-{pkgs, config, lib, inputs, ... }: let  
+{pkgs, config, lib, inputs, ... }: let
+  wallpaper = ./wal.png;  
                                                                           
 in { 
   programs.kitty = lib.mkForce {
@@ -8,6 +9,18 @@ in {
       background_blur = 1;
     };
   };  
+
+  home.packages = with pkgs; [
+    hyprpaper
+  ];
+
+  services.hyprpaper = {
+    enable = true;
+    settings = {
+      preload = ["${wallpaper}"];
+      wallpaper = [",${wallpaper}"];
+    };
+  };
  
   wayland.windowManager.hyprland = {
      enable = true;
@@ -138,4 +151,3 @@ in {
   };
 
 }
-
