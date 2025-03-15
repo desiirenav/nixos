@@ -1,4 +1,4 @@
-b, pkgs, inputs, pkgs-unstable, ... }:
+{lib, pkgs, inputs, pkgs-unstable, ... }:
 
 {
   programs.yazi = {

@@ -15,7 +15,13 @@
 
   home-manager = {
     users.narayan = {
-      imports = [ ./home.nix ];
+      imports = [ 
+        ./home.nix
+        ./modules/hyprland.nix
+        ./modules/rofi.nix
+        ./modules/yazi.nix
+        ./modules/stylix.nix 
+      ];
       programs.git = {
         enable = true;
         userName = "desiirenav";

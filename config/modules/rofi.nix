@@ -1,4 +1,4 @@
-b, config, pkgs, pkgs-unstable, ... }:
+{lib, config, pkgs, pkgs-unstable, ... }:
 
 {
   programs.rofi = {

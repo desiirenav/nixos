@@ -8,10 +8,6 @@ in {
       background_blur = 1;
     };
   };  
-
-  home.packages = with pkgs; [
-    hyprpaper
-  ];
  
   wayland.windowManager.hyprland = {
      enable = true;

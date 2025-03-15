@@ -1,4 +1,4 @@
-b, config, pkgs, inputs, ... }:
+{lib, config, pkgs, inputs, ... }:
 
 {
   programs.fish = {
