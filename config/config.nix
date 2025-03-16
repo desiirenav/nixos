@@ -63,6 +63,8 @@
       unzip
       ani-cli
       librewolf
+      typst
+      sioyek
       adwaita-icon-theme 
       (discord.override {
         withVencord = true;
