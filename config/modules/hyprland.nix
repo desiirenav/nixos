@@ -5,7 +5,9 @@ in {
   programs.kitty = lib.mkForce {
     enable = true;
     settings = {
-      background_opacity = "1";
+      confirm_os_window_close = 0;
+      enable_audio_bell = false;
+      background_opacity = "0.5";
       background_blur = 1;
     };
   };  

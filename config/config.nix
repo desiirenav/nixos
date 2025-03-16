@@ -58,7 +58,6 @@
       upower
       power-profiles-daemon
       inputs.zen-browser.packages."${system}".default
-      vim
       unrar
       unzip
       ani-cli

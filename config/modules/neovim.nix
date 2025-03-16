@@ -1,13 +1,17 @@
-{lib,config,pkgs,inputs,...}
+{lib,config,pkgs,inputs,...}:
 
 {
 
   programs.neovim = {
     enable = true;
     defaultEditor = true;
-    extraConfig = ''
-      set number relativenumber
-    '';
+    viAlias = true;
+    vimAlias = true;
+    configure = { 
+      customRC = ''
+        set number
+      '';
+    };
   };
 
 }
