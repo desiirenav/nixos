@@ -58,13 +58,13 @@
       upower
       power-profiles-daemon
       inputs.zen-browser.packages."${system}".default
+      adwaita-icon-theme
       unrar
       unzip
       ani-cli
       librewolf
       typst
-      sioyek
-      adwaita-icon-theme 
+      sioyek 
       (discord.override {
         withVencord = true;
        })

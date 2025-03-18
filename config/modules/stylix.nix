@@ -5,8 +5,8 @@
     image = ./w.jpg;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine.yaml";
     cursor = {
-      package = pkgs.capitaine-cursors-themed;
-      name = "Capitaine Cursors (Gruvbox)";
+      package = pkgs.rose-pine-cursor;
+      name = "BreezeX-RosePine-Linux";
     };
     fonts = {
       serif = {

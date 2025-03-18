@@ -9,6 +9,8 @@
       if test -z "$DISPLAY" -a "$XDG_VTNR" = 1
           exec Hyprland
       end
+
+      starship init fish | source
     '';
   };
   
