@@ -29,8 +29,8 @@ in {
      settings = {
        general = {
          monitor= ",1920x1080@60,auto,1";
-         gaps_in = "4";
-	 gaps_out = "4";
+         gaps_in = "1";
+	 gaps_out = "1";
          border_size = "2";
          resize_on_border = "false";
          allow_tearing = "false";
@@ -143,11 +143,7 @@ in {
 	  ", XF86AudioPause, exec, playerctl play-pause"
 	  ", XF86AudioPlay, exec, playerctl play-pause"
 	  ", XF86AudioPrev, exec, playerctl previous"
-	];  
-      
-      exec-once = [
-	"hyprpanel"
-      ];	
+	];  	
 
     };
   };

@@ -33,7 +33,7 @@
       bind C-a send-prefix
       # split panes using | and -
       bind | split-window -h
-      bind - split-window -v
+      bind v split-window -v
       unbind '"'
       unbind %
       # reload config file

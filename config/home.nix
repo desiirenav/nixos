@@ -14,5 +14,5 @@
     '';
   };
   
-  home.packages = with pkgs; [ hyprpanel ];
+  home.packages = with pkgs; [  ];
 }
