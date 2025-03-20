@@ -1,16 +1,25 @@
 {lib,config,pkgs,inputs,...}:
 
-{
-
-  programs.neovim = {
+{ 
+  programs.nvf = {
     enable = true;
-    defaultEditor = true;
-    viAlias = true;
-    vimAlias = true;
-    configure = { 
-      customRC = ''
-        set number
-      '';
+    settings = {
+      vim = {
+        theme = {
+          enable = true;
+          name = "rose-pine";
+          style = "main";
+        };
+        statusline.lualine.enable = true;
+        telescope.enable = true;
+        autocomplete.nvim-cmp.enable = true;
+        languages = {
+          enableLSP = true;
+          enableTreesitter = true;
+          nix.enable = true;
+          typst.enable = true;
+        };
+      };
     };
   };
 

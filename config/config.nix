@@ -64,12 +64,12 @@
       ani-cli
       librewolf
       typst
-      sioyek 
+      zathura
       (discord.override {
         withVencord = true;
        })
      ])
-
+ 
      ++
 
      (with pkgs-unstable; [
@@ -79,6 +79,16 @@
   # OpenSSH
   services.openssh.enable = true;
 
+
+  # Autoclean 
+  nix = {
+    settings.auto-optimise-store = true;
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 7d";
+    };
+  };
   # System Version
   system.stateVersion = "24.11";
 

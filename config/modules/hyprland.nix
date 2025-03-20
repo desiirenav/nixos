@@ -7,7 +7,7 @@ in {
     settings = {
       confirm_os_window_close = 0;
       enable_audio_bell = false;
-      background_opacity = "0.5";
+      background_opacity = "1";
       background_blur = 1;
     };
   };  
@@ -29,15 +29,15 @@ in {
      settings = {
        general = {
          monitor= ",1920x1080@60,auto,1";
-         gaps_in = "10";
-	 gaps_out = "10";
+         gaps_in = "4";
+	 gaps_out = "4";
          border_size = "2";
          resize_on_border = "false";
          allow_tearing = "false";
          layout = "dwindle";
        };
        decoration = {
-         rounding = "5";
+         rounding = "4";
 	 active_opacity = "1.0";
 	 inactive_opacity = "1.0";
 	 shadow = {

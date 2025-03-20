@@ -10,9 +10,10 @@
       hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
       zen-browser.url = "github:0xc000022070/zen-browser-flake";
       stylix.url = "github:danth/stylix/release-24.11";
+      nvf.url = "github:notashelf/nvf";
     };
 
-    outputs = { self, nixpkgs, home-manager, nixpkgs-unstable, hyprland, hyprpanel, stylix, ... }@inputs:
+    outputs = { self, nixpkgs, home-manager, nixpkgs-unstable, hyprland, hyprpanel, stylix,nvf,... }@inputs:
       let
         system = "x86_64-linux";
         lib = nixpkgs.lib;
@@ -31,6 +32,7 @@
         shared-modules = [
           home-manager.nixosModules.home-manager
           stylix.nixosModules.stylix
+          nvf.nixosModules.default
           {
             home-manager = {
               useUserPackages = true;
