@@ -14,5 +14,5 @@
     '';
   };
   
-  home.packages = with pkgs; [ hyprlock ];
+  home.packages = with pkgs; [  ];
 }

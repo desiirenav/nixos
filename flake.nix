@@ -10,6 +10,9 @@
       zen-browser.url = "github:0xc000022070/zen-browser-flake";
       stylix.url = "github:danth/stylix/release-24.11";
       nvf.url = "github:notashelf/nvf";
+      apple-fonts = {
+        url = "github:Lyndeno/apple-fonts.nix";
+      };
     };
 
     outputs = { self, nixpkgs, home-manager, nixpkgs-unstable, hyprland, stylix,nvf,... }@inputs:

@@ -10,26 +10,22 @@
     };
     fonts = {
       serif = {
-        package = pkgs.inter;
-        name = "Inter";
+        package = inputs.apple-fonts.packages.${pkgs.system}.sf-pro-nerd;
+        name = "SFProDisplay Nerd Font";
       };
       sansSerif = {
-        package = pkgs.inter;
-        name = "Inter";
+        package = inputs.apple-fonts.packages.${pkgs.system}.sf-pro-nerd;
+        name = "SFProDisplay Nerd Font";
       };
       monospace = {
-        package = pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; };
-        name = "JetBrains Mono Nerd Font Mono";  # Fixed font name (added space)
-      };
-      emoji = {
-        package = pkgs.noto-fonts-emoji;
-        name = "Noto Color Emoji";
+        package = pkgs-unstable.nerd-fonts.geist-mono;
+        name = "GeistMono Nerd Font Mono";
       };
       sizes = {
         applications = 11;
         desktop = 11;
         popups = 11;
-        terminal = 12;
+        terminal = 11;
       };
     };
   };
