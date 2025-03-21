@@ -23,6 +23,7 @@
         ./modules/yazi.nix
         ./modules/stylix.nix
 	./modules/starship.nix
+        ./modules/librewolf.nix
       ];
       programs.git = {
         enable = true;

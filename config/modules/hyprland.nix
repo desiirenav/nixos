@@ -3,14 +3,9 @@
 let
   wallpaper = ./w.jpg;
   mainMod = "SUPER";
-  # Generate workspace numbers 1-9 + special 0->10 mapping
   workspaceKeys = lib.range 1 9;
-  # Workspace switching bindings ($mod + 1-9/0)
-  workspaceSwitch = (map (num: "${mainMod}, ${toString num}, workspace, ${toString num}") workspaceKeys)
-    ++ [ "${mainMod}, 0, workspace, 10" ];
-  # Move window to workspace bindings ($mod + SHIFT + 1-9/0)
-  moveToWorkspace = (map (num: "${mainMod} SHIFT, ${toString num}, movetoworkspace, ${toString num}") workspaceKeys)
-    ++ [ "${mainMod} SHIFT, 0, movetoworkspace, 10" ];
+  workspaceSwitch = (map (num: "${mainMod}, ${toString num}, workspace, ${toString num}") workspaceKeys) ++ ["${mainMod}, 0, workspace, 10"];
+  moveToWorkspace = (map (num: "${mainMod} SHIFT, ${toString num}, movetoworkspace, ${toString num}") workspaceKeys) ++ ["${mainMod} SHIFT, 0, movetoworkspace, 10"];
 
 in {
   programs.kitty = lib.mkForce {
@@ -32,31 +27,37 @@ in {
       wallpaper = [",${wallpaper}"];
     };
   };
- 
+
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
+      monitor = ",preferred,auto,auto";
+      
+      env = [
+        "XCURSOR_SIZE,24"
+        "HYPRCURSOR_SIZE,24"
+      ];
+
       general = {
-        monitor = ",1920x1080@60,auto,1";
-        gaps_in = "1";
-        gaps_out = "1";
-        border_size = "2";
-        resize_on_border = "no";  # Fixed boolean
-        allow_tearing = "false";
+        gaps_in = 1;
+        gaps_out = 1;
+        border_size = 2;
+        resize_on_border = "no";
+        allow_tearing = "no";
         layout = "dwindle";
       };
-      
+
       decoration = {
-        rounding = "4";
+        rounding = 4;
         active_opacity = "1.0";
         inactive_opacity = "1.0";
         shadow = {
-          enabled = "yes";  # Fixed boolean
+          enabled = "yes";
           range = "4";
           render_power = "3";
         };
         blur = {
-          enabled = "yes";  # Fixed boolean
+          enabled = "yes";
           size = "3";
           passes = "1";
           vibrancy = "0.1696";
@@ -64,14 +65,14 @@ in {
       };
 
       animations = {
-        enabled = "yes";  # Fixed value
+        enabled = "yes";
         bezier = [
           "easeOutQuint,0.23,1,0.32,1"
           "easeInOutCubic,0.65,0.05,0.36,1"
           "linear,0,0,1,1"
           "almostLinear,0.5,0.5,0.75,1.0"
           "quick,0.15,0,0.1,1"
-        ];  
+        ];
         animation = [
           "global, 1, 10, default"
           "border, 1, 5.39, easeOutQuint"
@@ -93,35 +94,48 @@ in {
       };
 
       dwindle = {
-        pseudotile = "yes";  # Fixed boolean
-        preserve_split = "true";
+        pseudotile = "yes";
+        preserve_split = "yes";
       };
 
       master.new_status = "master";
 
       misc = {
-        force_default_wallpaper = "0";
+        force_default_wallpaper = "-1";
         disable_hyprland_logo = "true";
+      };
+
+      input = {
+        kb_layout = "us";
+        follow_mouse = 1;
+        sensitivity = 0;
+        touchpad.natural_scroll = "no";
+      };
+
+      gestures.workspace_swipe = "no";
+
+      device = {
+        name = "epic-mouse-v1";
+        sensitivity = "-0.5";
       };
 
       "$mod" = mainMod;
 
       bind = workspaceSwitch ++ moveToWorkspace ++ [
-        # Base bindings
         "$mod, RETURN, exec, kitty"
         "$mod, Q, killactive"
         "$mod, M, exit"
         "$mod, X, exec, rofi -show drun"
-        "$mod, E, exec, ranger"
+        "$mod, E, exec, yazi"
         "$mod, V, togglefloating"
         "$mod, P, pseudo"
         "$mod, J, togglesplit"
-        
-        # Special workspace bindings
+        "$mod, left, movefocus, l"
+        "$mod, right, movefocus, r"
+        "$mod, up, movefocus, u"
+        "$mod, down, movefocus, d"
         "$mod, S, togglespecialworkspace, magic"
         "$mod SHIFT, S, movetoworkspace, special:magic"
-        
-        # Mouse workspace control
         "$mod, mouse_down, workspace, e+1"
         "$mod, mouse_up, workspace, e-1"
       ];
@@ -145,7 +159,14 @@ in {
         ", XF86AudioPause, exec, playerctl play-pause"
         ", XF86AudioPlay, exec, playerctl play-pause"
         ", XF86AudioPrev, exec, playerctl previous"
-      ];  
+      ];
+
+      windowrule = [
+        "suppressevent maximize, class:.*"
+        "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
+      ];
     };
   };
 }
+
+
