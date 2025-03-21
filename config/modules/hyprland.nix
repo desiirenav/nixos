@@ -39,8 +39,8 @@ in {
       ];
 
       general = {
-        gaps_in = 1;
-        gaps_out = 1;
+        gaps_in = 0;
+        gaps_out = 0;
         border_size = 2;
         resize_on_border = "no";
         allow_tearing = "no";
