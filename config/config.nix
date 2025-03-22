@@ -50,11 +50,18 @@
 
   environment.systemPackages = 
     (with pkgs; [
+      pfetch
       fastfetch
+      grim
+      swappy
+      slurp
+      dunst
+      wf-recorder
       inputs.zen-browser.packages."${system}".default
       unrar
       unzip
       ani-cli
+      mpv
       librewolf
       typst
       zathura
@@ -66,12 +73,14 @@
      ++
 
      (with pkgs-unstable; [
-       nerd-fonts.jetbrains-mono
+
      ]);
    
   # OpenSSH
   services.openssh.enable = true;
 
+  # Onedrive
+  # services.onedrive.enable = true;
 
   # Autoclean 
   nix = {
