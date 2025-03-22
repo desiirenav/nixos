@@ -18,7 +18,7 @@ in {
     };
   };  
 
-  home.packages = with pkgs; [ hyprpaper ];
+  home.packages = with pkgs; [ hyprpaper hyprpanel ];
 
   services.hyprpaper = {
     enable = true;
@@ -39,8 +39,8 @@ in {
       ];
 
       general = {
-        gaps_in = 0;
-        gaps_out = 0;
+        gaps_in = 2;
+        gaps_out = 2;
         border_size = 2;
         resize_on_border = "no";
         allow_tearing = "no";
@@ -165,6 +165,10 @@ in {
         "suppressevent maximize, class:.*"
         "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
       ];
+
+      exec-once = [
+	"hyprpanel"
+      ];	
     };
   };
 }

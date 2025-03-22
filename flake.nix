@@ -7,6 +7,7 @@
       home-manager.url = "github:nix-community/home-manager/release-24.11";
       home-manager.inputs.nixpkgs.follows = "nixpkgs";
       hyprland.url = "github:hyprwm/Hyprland";
+      hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
       zen-browser.url = "github:0xc000022070/zen-browser-flake";
       stylix.url = "github:danth/stylix/release-24.11";
       nvf.url = "github:notashelf/nvf";
@@ -15,13 +16,16 @@
       };
     };
 
-    outputs = { self, nixpkgs, home-manager, nixpkgs-unstable, hyprland, stylix,nvf,... }@inputs:
+    outputs = { self, nixpkgs, home-manager, nixpkgs-unstable, hyprland, hyprpanel, stylix,nvf,... }@inputs:
       let
         system = "x86_64-linux";
         lib = nixpkgs.lib;
         pkgs = import nixpkgs {
           inherit system;
           config.allowUnfree = true;
+          overlays = [
+            inputs.hyprpanel.overlay
+          ];
         };
 
         specialArgs = inputs // { inherit system inputs pkgs pkgs-unstable; };

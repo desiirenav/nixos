@@ -29,7 +29,10 @@
     variant = "";
   };
   
- 
+  # Power
+  services.upower.enable = true;
+  services.power-profiles-daemon.enable = true; 
+
   # Bluetooth
   hardware.bluetooth.enable = true;
 
@@ -50,12 +53,13 @@
 
   environment.systemPackages = 
     (with pkgs; [
+      power-profiles-daemon
+      adwaita-icon-theme 
       pfetch
       fastfetch
       grim
       swappy
       slurp
-      dunst
       wf-recorder
       inputs.zen-browser.packages."${system}".default
       unrar
@@ -73,7 +77,7 @@
      ++
 
      (with pkgs-unstable; [
-
+       nerd-fonts.jetbrains-mono
      ]);
    
   # OpenSSH

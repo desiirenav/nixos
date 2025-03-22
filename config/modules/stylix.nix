@@ -18,14 +18,14 @@
         name = "SFProDisplay Nerd Font";
       };
       monospace = {
-        package = pkgs-unstable.nerd-fonts.geist-mono;
-        name = "GeistMono Nerd Font Mono";
+        package = inputs.apple-fonts.packages.${pkgs.system}.sf-mono-nerd;
+        name = "SF Mono Nerd Font";
       };
       sizes = {
-        applications = 11;
-        desktop = 11;
-        popups = 11;
-        terminal = 11;
+        applications = 12;
+        desktop = 12;
+        popups = 12;
+        terminal = 12;
       };
     };
   };
