@@ -18,8 +18,8 @@
         name = "SFProDisplay Nerd Font";
       };
       monospace = {
-        package = inputs.apple-fonts.packages.${pkgs.system}.sf-mono-nerd;
-        name = "SF Mono Nerd Font";
+        package = pkgs.sf-mono-liga-bin;
+        name = "Liga SFMono Nerd Font";
       };
       sizes = {
         applications = 12;
