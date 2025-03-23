@@ -32,6 +32,9 @@
   # Power
   services.upower.enable = true;
   services.power-profiles-daemon.enable = true; 
+  
+  # All nerd-fonts
+  fonts.packages = with pkgs; [ nerdfonts ];
 
   # Bluetooth
   hardware.bluetooth.enable = true;
@@ -77,7 +80,6 @@
      ++
 
      (with pkgs-unstable; [
-       nerd-fonts.jetbrains-mono
      ]);
    
   # OpenSSH
