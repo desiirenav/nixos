@@ -2,7 +2,7 @@
 {
   stylix = {
     enable = true;
-    image = ./math.png;
+    image = ./bay.JPG;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine.yaml";
     cursor = {
       package = pkgs.rose-pine-cursor;
