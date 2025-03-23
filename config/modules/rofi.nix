@@ -7,7 +7,7 @@
     package = pkgs.rofi-wayland;
     extraConfig = {
       modi = "drun,run,window";
-      font = "JetBrainsMono Nerd Font Mono 12";
+      font = "SFProDisplay Nerd Font 12";
       show-icons = true;
       drun-display-format = "{icon} {name}";
       display-drun = "Apps";
