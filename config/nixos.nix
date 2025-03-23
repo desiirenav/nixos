@@ -5,7 +5,7 @@
 
 {
   imports =
-    [ (modulesPath + "/installer/scan/not-detected.nix") ./config.nix ./narayan.nix ./modules/stylix.nix ./modules/neovim.nix ./hardware/nvidia.nix
+    [ (modulesPath + "/installer/scan/not-detected.nix") ./config.nix ./narayan.nix ./modules/stylix.nix ./modules/work.nix ./hardware/nvidia.nix
     ];
 
   # Bootloader.
