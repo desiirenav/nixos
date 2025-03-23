@@ -69,6 +69,7 @@
       unzip
       ani-cli
       mpv
+      gowall
       librewolf
       typst
       zathura

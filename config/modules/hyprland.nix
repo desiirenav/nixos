@@ -1,7 +1,7 @@
 {pkgs, config, lib, inputs, ... }: 
 
 let
-  wallpaper = ./w.jpg;
+  wallpaper = ./math.png;
   mainMod = "SUPER";
   workspaceKeys = lib.range 1 9;
   workspaceSwitch = (map (num: "${mainMod}, ${toString num}, workspace, ${toString num}") workspaceKeys) ++ ["${mainMod}, 0, workspace, 10"];
