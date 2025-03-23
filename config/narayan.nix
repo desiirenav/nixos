@@ -22,8 +22,7 @@
         ./modules/rofi.nix
         ./modules/yazi.nix
         ./modules/stylix.nix
-	./modules/starship.nix
-        ./modules/librewolf.nix
+	./modules/starship/starship.nix
       ];
       programs.git = {
         enable = true;
