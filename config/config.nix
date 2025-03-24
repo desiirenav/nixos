@@ -59,6 +59,7 @@
       power-profiles-daemon
       adwaita-icon-theme 
       pfetch
+      nitch
       fastfetch
       grim
       swappy

@@ -15,6 +15,7 @@
         autocomplete.nvim-cmp.enable = true;
         languages = {
           enableLSP = true;
+          enableFormat = true;
           enableTreesitter = true;
           nix.enable = true;
           typst.enable = true;
