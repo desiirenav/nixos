@@ -69,7 +69,7 @@
       unzip
       ani-cli
       mpv
-      gowall
+      texlivePackages.cm
       librewolf
       typst
       zathura
