@@ -66,6 +66,10 @@
             inherit system specialArgs;
             modules = shared-modules ++ [ ./config/nixos.nix ];
           };
+          alt = nixpkgs.lib.nixosSystem {
+            inherit system specialArgs;
+            modules = shared-modules ++ [ ./config/alt.nix ];
+          };
         };
       };
 }
