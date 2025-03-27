@@ -70,9 +70,7 @@
       unzip
       ani-cli
       mpv
-      texlivePackages.cm
       librewolf
-      typst
       zathura
       (discord.override {
         withVencord = true;
@@ -82,6 +80,7 @@
      ++
 
      (with pkgs-unstable; [
+       typst
      ]);
    
   # OpenSSH
