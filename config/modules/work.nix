@@ -18,7 +18,10 @@
           enableFormat = true;
           enableTreesitter = true;
           nix.enable = true;
-          typst.enable = true;
+          typst = {
+            enable = true;
+            extensions.typst-preview-nvim.enable = true;
+          };
         };
       };
     };
