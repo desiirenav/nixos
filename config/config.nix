@@ -81,7 +81,6 @@
      ++
 
      (with pkgs-unstable; [
-       heroic
      ]);
    
   # OpenSSH
