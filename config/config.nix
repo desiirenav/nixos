@@ -69,6 +69,7 @@
       unrar
       unzip
       ani-cli
+      typst
       mpv
       librewolf
       zathura
@@ -80,7 +81,7 @@
      ++
 
      (with pkgs-unstable; [
-       typst
+       heroic
      ]);
    
   # OpenSSH
